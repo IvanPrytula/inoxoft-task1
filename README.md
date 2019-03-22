@@ -1,19 +1,29 @@
-# Django_DRF_React_Redux quick starter
+## Django_DRF_React quick starter
+
+#### Functionality
+* [x] Basic Signup & Login/Logout with JWT
+* [x] API documentation with DRF Swagger
 
 
+### Quick Install
 
-> Basic Signup/Login/Logout & JWT
+- Clone the repo
 
-#### Tech stack
-* [x] Login with JWT
-
-##### Useful commands:
-
-Specify --settings option everytime you execute ./manage.py
-```bash
-$ ./manage.py runserver --settings=config.settings.development
-$ ./manage.py makemigrations --settings=config.settings.development
-$ ./manage.py migrate --settings=config.settings.development
-
+#### Backend
 ```
+$ cd inoxoft-task1 
+$ cd backend
+$ pip3 install -r requirements.txt
+$ ./manage.py makemigrations
+$ ./manage.py migrate
+$ ./manage.py runserver
+```
+
+#### Frontend
+```
+$ cd frontend
+$ npm install
+$ npm start
+```
+
 

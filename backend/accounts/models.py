@@ -1,15 +1,8 @@
-from django.contrib.auth.models import UserManager, AbstractUser
-from django.db.models import Q
-
-
-class CustomUserManager(UserManager):
-
-    def get_by_natural_key(self, username):
-        return self.get(
-            Q(**{self.model.USERNAME_FIELD: username}) |
-            Q(**{self.model.EMAIL_FIELD: username})
-        )
+from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    objects = CustomUserManager()
+    """Custom User will be easy to customize in the future."""
+
+    def __str__(self):
+        return self.email

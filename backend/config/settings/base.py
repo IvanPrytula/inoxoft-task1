@@ -47,7 +47,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
@@ -99,11 +99,16 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+)
+
 # Allow the user to log in by email or username
 AUTH_USER_MODEL = 'accounts.User'
 
 # JWT settings for authentication
 JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'config.utils.my_jwt_response_handler',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
     'JWT_ALLOW_REFRESH': True,
 }
