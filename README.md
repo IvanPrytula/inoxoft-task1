@@ -1,4 +1,4 @@
-# Django_DRF_React_Redux quick starter
+# Django_DRF_React quick starter
 
 
 
