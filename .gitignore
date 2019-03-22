@@ -1,0 +1,15 @@
+# IDE specific
+.idea/
+
+
+__pycache__/
+
+# virtualenv
+Inox1Venv/
+venv/
+
+# dotenv environment variables file
+.env
+
+# DB
+db.sqlite3
