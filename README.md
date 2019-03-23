@@ -6,8 +6,10 @@
 * [x] local/dev/prod settings for Django backend 
 
 ## Retrieve code
-* `$ git clone https://github.com/IvanPrytula/inoxoft-task1.git`
-* `cd inoxoft-task1`
+```
+$ git clone https://github.com/IvanPrytula/inoxoft-task1.git
+$ cd inoxoft-task1
+```
 
 
 ## Installation
@@ -19,7 +21,7 @@ Accordingly to your OS/Architecture follow instructions on official sites.
 * `$ docker-compose build` <-- works
 * `$ docker-compose up`    <-- doesn't work ((
 
-##### Steps:
+##### Alternative Steps to Try How Application works:
 ```
 $ cd backend
 $ pip3 install -r requirements.txt
