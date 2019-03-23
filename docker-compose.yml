@@ -18,7 +18,7 @@ services:
     # Name the container to easily attach to it
     container_name: backend
     image: backend:latest
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     # Create a volume so I could edit the code without rebuilding container
     volumes:
       - .:/backend
