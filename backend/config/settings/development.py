@@ -13,8 +13,8 @@ DATABASES = {
         'NAME': 'djangoreactredux_db',
         'USER': 'djangoreactredux',
         'PASSWORD': 'djangoreactredux',
-        'HOST': 'db',
-        'PORT': 5432
+        'HOST': '*',
+        'PORT': 5432,
     }
 }
 
