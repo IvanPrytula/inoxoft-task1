@@ -8,7 +8,7 @@ DATABASES = {
         'NAME': 'djangoreactredux_db',
         'USER': 'djangoreactredux',
         'PASSWORD': 'djangoreactredux',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432
     }
 }

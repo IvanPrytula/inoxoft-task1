@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  # Postgres container
+  db:
+    build:
+        context: .
+        dockerfile: ./postgres/Dockerfile
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+
+  # Backend API container
+  backend:
+    # Build by using Dockerfile in this directory
+    build: ./backend
+    # Name the container to easily attach to it
+    container_name: backend
+    image: backend:latest
+    command: python3 manage.py runserver 0.0.0.0:8000
+    # Create a volume so I could edit the code without rebuilding container
+    volumes:
+      - .:/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  # Frontend container
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    image: frontend:latest
+    command: npm start
+    volumes:
+      - ./frontend:/frontend
+      - node-modules:/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node-modules:
